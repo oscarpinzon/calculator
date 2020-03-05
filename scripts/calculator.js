@@ -62,6 +62,10 @@ function resetCalculator() {
   calculator.operator = null;
 }
 
+function deleteCurrentOperand() {
+  calculator.displayValue = "0";
+}
+
 function updateDisplay() {
   const display = document.querySelector(".calculator-screen");
   display.value = calculator.displayValue;
@@ -85,6 +89,11 @@ keys.addEventListener("click", event => {
   }
   if (target.classList.contains("all-clear")) {
     resetCalculator();
+    updateDisplay();
+    return;
+  }
+  if (target.classList.contains("delete")) {
+    deleteCurrentOperand();
     updateDisplay();
     return;
   }
