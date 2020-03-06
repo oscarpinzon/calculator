@@ -74,13 +74,13 @@ button:hover {
   background-color: #f17377;
 }
 
-.delete {
+.backspace {
   background-color: #f0595f;
   border-color: #b0353a;
   color: #fff;
 }
 
-.delete:hover {
+.backspace:hover {
   background-color: #f17377;
 }
 

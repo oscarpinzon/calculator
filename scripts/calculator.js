@@ -92,13 +92,42 @@ keys.addEventListener("click", event => {
     updateDisplay();
     return;
   }
-  if (target.classList.contains("delete")) {
+  if (target.classList.contains("backspace")) {
     deleteCurrentOperand();
     updateDisplay();
     return;
   }
   inputDigit(target.value);
   updateDisplay();
+});
+
+window.addEventListener("keydown", event => {
+  const possibleOperators = "=+-*/";
+  const possibleNumbers = "0123456789";
+  if (possibleOperators.includes(event.key)) {
+    handleOperator(event.key);
+    updateDisplay();
+    return;
+  }
+  if (event.key === ".") {
+    inputDecimal(event.key);
+    updateDisplay();
+    return;
+  }
+  if (event.key === "Backspace") {
+    deleteCurrentOperand();
+    updateDisplay();
+    return;
+  }
+  if (event.key === "Enter") {
+    handleOperator("=");
+    updateDisplay();
+    return;
+  }
+  if (possibleNumbers.includes(event.key)) {
+    inputDigit(event.key);
+    updateDisplay();
+  }
 });
 
 updateDisplay();
