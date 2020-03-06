@@ -48,11 +48,11 @@ function handleOperator(nextOperator) {
 }
 
 const performCalculation = {
-  "/": (firstOperand, secondOperand) => firstOperand / secondOperand,
-  "*": (firstOperand, secondOperand) => firstOperand * secondOperand,
-  "+": (firstOperand, secondOperand) => firstOperand + secondOperand,
-  "-": (firstOperand, secondOperand) => firstOperand - secondOperand,
-  "=": (firstOperand, secondOperand) => secondOperand
+  "/": (firstOperand, secondOperand) => (firstOperand / secondOperand).toFixed(2),
+  "*": (firstOperand, secondOperand) => (firstOperand * secondOperand).toFixed(2),
+  "+": (firstOperand, secondOperand) => (firstOperand + secondOperand).toFixed(2),
+  "-": (firstOperand, secondOperand) => (firstOperand - secondOperand).toFixed(2),
+  "=": (firstOperand, secondOperand) => (secondOperand).toFixed(2)
 };
 
 function resetCalculator() {
